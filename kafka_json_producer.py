@@ -148,6 +148,7 @@ def main(topic):
                             key=string_serializer(str(uuid4())),
                             value=json_serializer(car, SerializationContext(topic, MessageField.VALUE)),
                             on_delivery=delivery_report)
+                     i+=1
               else:
                      break
     except KeyboardInterrupt:
