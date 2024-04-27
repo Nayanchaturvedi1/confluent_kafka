@@ -8,3 +8,4 @@
 7.) Producer will publish data in Kafka Topic
 8.) Write consumer group to consume data from Kafka topic
 9.) In Kafka consumer code do some changes or transformation for each record and write it in Cassandra table
+10.) read about zoo-keeper too
