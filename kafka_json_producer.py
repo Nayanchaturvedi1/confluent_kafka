@@ -139,14 +139,17 @@ def main(topic):
     #while True:
         # Serve on_delivery callbacks from previous calls to produce()
     producer.poll(0.0)
+    i=0   
     try:
         for car in get_car_instance(file_path=FILE_PATH):
+              if i<100:
             print(car)
             producer.produce(topic=topic,
                             key=string_serializer(str(uuid4())),
                             value=json_serializer(car, SerializationContext(topic, MessageField.VALUE)),
                             on_delivery=delivery_report)
-            break
+              else:
+                     break
     except KeyboardInterrupt:
         pass
     except ValueError:
